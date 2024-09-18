@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mullica"
+    android:backgroundTint="#7C7C7C"
+    android:backgroundTintMode="multiply"
+    tools:context=".SecondFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#F69E0000"
+        android:backgroundTintMode="src_atop">
+
+        <Button
+            android:id="@+id/buttonCard"
+            android:layout_width="294dp"
+            android:layout_height="194dp"
+            android:layout_marginTop="76dp"
+            android:fontFamily="@font/comic_neue_bold"
+            android:text="can"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="#F8650A"
+            android:text="Medium"
+            app:layout_constraintEnd_toStartOf="@+id/buttonHard"
+            app:layout_constraintHorizontal_bias="0.418"
+            app:layout_constraintStart_toEndOf="@+id/buttonEasy"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCard" />
+
+        <Button
+            android:id="@+id/buttonEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="#00B307"
+            android:text="Easy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCard" />
+
+        <Button
+            android:id="@+id/buttonHard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="28dp"
+            android:backgroundTint="#FF0000"
+            android:text="Hard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCard" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="117dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="116dp"
+            android:background="#8CFFFFFF"
+            android:backgroundTintMode="add"
+            android:text="Level"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonMedium" />
+
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="117dp"
+            android:layout_height="52dp"
+            android:background="#8CFFFFFF"
+            android:text="1"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonLevelUp"
+            app:layout_constraintStart_toEndOf="@+id/buttonLevelDown"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/buttonLevelDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="152dp"
+            android:text="-"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonLevelUp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEasy" />
+
+        <Button
+            android:id="@+id/buttonLevelUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp"
+            android:text="+"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHard" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
