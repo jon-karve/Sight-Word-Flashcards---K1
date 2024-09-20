@@ -14,10 +14,27 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.baub.customflashcards.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second"/>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.baub.customflashcards.ThirdFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_level1"
+            app:destination="@id/thirdFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment2"
+        android:name="com.baub.customflashcards.WFLevel1Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_w_f_level1" />
 </navigation>
