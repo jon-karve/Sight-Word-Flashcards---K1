@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WFLevel2Fragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonFind17"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="96dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind4" />
+
+        <Button
+            android:id="@+id/buttonFind18"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="96dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonFind19"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toEndOf="@+id/buttonFind17"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind5" />
+
+        <Button
+            android:id="@+id/buttonFind19"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="16dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind6" />
+
+        <Button
+            android:id="@+id/buttonFind4"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="96dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind1" />
+
+        <Button
+            android:id="@+id/buttonFind5"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="96dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonFind6"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toEndOf="@+id/buttonFind4"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind2" />
+
+        <Button
+            android:id="@+id/buttonFind6"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="16dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind3" />
+
+        <Button
+            android:id="@+id/buttonFind1"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="176dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonFind2"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="176dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonFind3"
+            app:layout_constraintStart_toEndOf="@+id/buttonFind1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonFind3"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="176dp"
+            android:layout_marginEnd="16dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonHint"
+            android:layout_width="205dp"
+            android:layout_height="89dp"
+            android:backgroundTint="#41E000"
+            android:text="@string/question"
+            android:textSize="48sp"
+            tools:layout_editor_absoluteX="197dp"
+            tools:layout_editor_absoluteY="868dp" />
+
+        <TextView
+            android:id="@+id/textScore2"
+            android:layout_width="160dp"
+            android:layout_height="140dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            tools:layout_editor_absoluteX="578dp"
+            tools:layout_editor_absoluteY="781dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="138dp"
+            android:layout_height="40dp"
+            android:text="Score"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            tools:layout_editor_absoluteX="402dp"
+            tools:layout_editor_absoluteY="881dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
