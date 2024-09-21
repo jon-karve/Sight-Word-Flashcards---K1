@@ -22,7 +22,11 @@
         android:id="@+id/SecondFragment"
         android:name="com.baub.customflashcards.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second"/>
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_SecondFragment_to_settings"
+            app:destination="@id/thirdFragment3" />
+    </fragment>
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.baub.customflashcards.ThirdFragment"
@@ -31,10 +35,31 @@
         <action
             android:id="@+id/action_thirdFragment_to_level1"
             app:destination="@id/thirdFragment2" />
+        <action
+            android:id="@+id/action_thirdFragment_to_WFL2"
+            app:destination="@id/thirdFragment5" />
     </fragment>
+    <fragment
+        android:id="@+id/thirdFragment3"
+        android:name="com.baub.customflashcards.SettingsFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/thirdFragment2"
         android:name="com.baub.customflashcards.WFLevel1Fragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_w_f_level1" />
+        tools:layout="@layout/fragment_w_f_level1" >
+        <action
+            android:id="@+id/action_WF_to_settingsFragment"
+            app:destination="@id/thirdFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment5"
+        android:name="com.baub.customflashcards.WFLevel2Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_w_f_level2">
+        <action
+            android:id="@+id/action_WFL2_to_settings"
+            app:destination="@id/thirdFragment3" />
+    </fragment>
 </navigation>
