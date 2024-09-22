@@ -34,8 +34,10 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         binding.buttonWordfind.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
+        }
+        binding.buttonMatch.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_matchMenuFragment)
         }
     }
 

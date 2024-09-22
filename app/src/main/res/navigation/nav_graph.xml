@@ -6,6 +6,24 @@
     app:startDestination="@id/FirstFragment">
 
     <fragment
+        android:id="@+id/matchMenuFragment"
+        android:name="com.baub.customflashcards.MatchMenuFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_match_menu">
+        <action
+            android:id="@+id/action_matchMenuFragment_to_memoryLevel1Fragment"
+            app:destination="@id/memoryLevel1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoryLevel1Fragment"
+        android:name="com.baub.customflashcards.MemoryLevel1Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_memory_level1" >
+        <action
+            android:id="@+id/action_memoryLevel1Fragment_to_Menu"
+            app:destination="@id/thirdFragment3" />
+    </fragment>
+    <fragment
         android:id="@+id/FirstFragment"
         android:name="com.baub.customflashcards.FirstFragment"
         android:label="@string/first_fragment_label"
@@ -17,6 +35,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_matchMenuFragment"
+            app:destination="@id/matchMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"

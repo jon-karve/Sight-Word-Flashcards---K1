@@ -152,7 +152,8 @@ class WFLevel1Fragment : Fragment() {
             val soundsSame = ((b.text == "to" && cardNames[cardList[0]] == "two") || (b.text == "two" && cardNames[cardList[0]] == "to")) ||
                              (b.text == "too" && cardNames[cardList[0]] == "two") || (b.text == "two" && cardNames[cardList[0]] == "too") ||
                              (b.text == "to" && cardNames[cardList[0]] == "too") || (b.text == "too" && cardNames[cardList[0]] == "to")
-            if(cardList[0] == numbers[pos-1] || soundsSame){
+//            if(cardList[0] == numbers[pos-1] || soundsSame){
+              if(b.text == cardNames[cardList[0]] || soundsSame){
                 //choice is correct - disappear the card and decrement the card count
                 cardCount--
                 b.visibility = View.INVISIBLE

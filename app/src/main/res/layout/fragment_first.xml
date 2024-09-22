@@ -15,21 +15,35 @@
             android:id="@+id/button_wordfind"
             android:layout_width="441dp"
             android:layout_height="307dp"
-            android:layout_marginTop="352dp"
+            android:layout_marginTop="60dp"
             android:text="Word Find"
             android:textSize="60sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/button_flashcards" />
+
+        <Button
+            android:id="@+id/button_match"
+            android:layout_width="441dp"
+            android:layout_height="307dp"
+            android:layout_marginTop="60dp"
+            android:text="Memory Game"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_wordfind" />
 
         <Button
             android:id="@+id/button_flashcards"
             android:layout_width="441dp"
             android:layout_height="307dp"
+            android:layout_marginTop="20dp"
             android:text="Flash Cards"
             android:textSize="60sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

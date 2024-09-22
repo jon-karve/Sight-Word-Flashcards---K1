@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemoryLevel1Fragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/matchButton1"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="112dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/matchButton2"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="112dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/matchButton6"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toEndOf="@+id/matchButton4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/matchButton3"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="28dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/matchButton4"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton1" />
+
+        <Button
+            android:id="@+id/matchButton5"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/matchButton6"
+            app:layout_constraintStart_toEndOf="@+id/matchButton4"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton2" />
+
+        <Button
+            android:id="@+id/matchButton6"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="32dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton3" />
+
+        <Button
+            android:id="@+id/matchButton7"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton4" />
+
+        <Button
+            android:id="@+id/matchButton8"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/matchButton6"
+            app:layout_constraintStart_toEndOf="@+id/matchButton4"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton5" />
+
+        <Button
+            android:id="@+id/matchButton9"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="32dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton6" />
+
+        <Button
+            android:id="@+id/matchButton10"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton7" />
+
+        <Button
+            android:id="@+id/matchButton11"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/matchButton6"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toEndOf="@+id/matchButton4"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton8" />
+
+        <Button
+            android:id="@+id/matchButton12"
+            android:layout_width="212dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="28dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matchButton9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
