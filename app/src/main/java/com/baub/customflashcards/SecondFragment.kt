@@ -29,6 +29,8 @@ class SecondFragment : Fragment() {
     var cardSounds = arrayOf(R.raw.can,R.raw.the,R.raw.i,R.raw.we,R.raw.out,R.raw.down)
     var cardIndex = 0
     var cardCount = 6
+    var numbers = (0..5).toList().shuffled().toTypedArray()
+    var cardList = (0..5).toList().shuffled().toTypedArray()
     var level = 1
 
     fun resetCards(){
@@ -81,16 +83,24 @@ class SecondFragment : Fragment() {
         } else if (level == 15){
             cardNames = arrayOf("sound", "their", "as", "be", "one", "three")
             cardSounds = arrayOf(R.raw.sound, R.raw.their, R.raw.`as`, R.raw.be, R.raw.one, R.raw.three)
+        } else if (level == 16){
+            cardNames = arrayOf("I", "can", "see", "the", "we", "a", "like", "to", "and", "go")
+            cardSounds = arrayOf(R.raw.i, R.raw.can, R.raw.see, R.raw.the, R.raw.we, R.raw.a, R.raw.like, R.raw.to, R.raw.and, R.raw.go)
+            cardCount = 10
+            cardFrequencies = arrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
         }
 
+        numbers = (0..cardCount-1).toList().shuffled().toTypedArray()
+        cardList = (0..cardCount-1).toList().shuffled().toTypedArray()
 
         binding.buttonCard.text = cardNames[cardIndex]
     }
 
+
     fun removeCard(){
         cardNames = cardNames.toMutableList().apply { removeAt(cardIndex) }.toTypedArray()
         cardSounds = cardSounds.toMutableList().apply { removeAt(cardIndex) }.toTypedArray()
-        cardIndex = (cardIndex) % cardCount
+        cardIndex %= cardCount
         binding.buttonCard.text = cardNames[cardIndex]
     }
 

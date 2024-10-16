@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-09-18T14:12:31.133616200Z">
+        <DropdownSelection timestamp="2024-10-13T20:25:15.721102800Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Jon\.android\avd\Fire_HD_10_API_35.avd" />

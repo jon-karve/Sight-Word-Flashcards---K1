@@ -35,7 +35,7 @@ class SettingsFragment : Fragment() {
         val editor = sharedPref.edit()
         binding.levelText.text = level.toString()
         binding.buttonLevelUp.setOnClickListener {
-            if(level<15) {
+            if(level<16) {
                 level++
                 binding.levelText.text = level.toString()
 //                editor.putString("setting_level", "setting_value")

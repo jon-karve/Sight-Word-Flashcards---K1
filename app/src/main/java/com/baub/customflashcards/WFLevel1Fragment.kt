@@ -131,6 +131,9 @@ class WFLevel1Fragment : Fragment() {
         } else if (level == 15){
             cardNames = arrayOf("sound", "their", "as", "be", "one", "three")
             cardSounds = arrayOf(R.raw.sound, R.raw.their, R.raw.`as`, R.raw.be, R.raw.one, R.raw.three)
+        } else if (level == 16){
+            cardNames = arrayOf("sound", "their", "as", "be", "one", "three")
+            cardSounds = arrayOf(R.raw.sound, R.raw.their, R.raw.`as`, R.raw.be, R.raw.one, R.raw.three)
         }
         setPosition(binding.buttonFind1,1)
         setPosition(binding.buttonFind2,2)
