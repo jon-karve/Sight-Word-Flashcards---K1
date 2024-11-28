@@ -90,8 +90,14 @@ class SecondFragment : Fragment() {
             cardFrequencies = arrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
         }
 
-        numbers = (0..cardCount-1).toList().shuffled().toTypedArray()
-        cardList = (0..cardCount-1).toList().shuffled().toTypedArray()
+        val indices = cardNames.indices.toList()
+
+        // Shuffle the list of indices
+        val shuffledIndices = indices.shuffled()
+
+        // Reorder both arrays based on the shuffled indices
+        cardNames = Array(cardNames.size) { i -> cardNames[shuffledIndices[i]] }
+        cardSounds = Array(cardSounds.size) { i -> cardSounds[shuffledIndices[i]] }
 
         binding.buttonCard.text = cardNames[cardIndex]
     }
@@ -112,6 +118,25 @@ class SecondFragment : Fragment() {
         cardIndex = (cardIndex+1)%cardCount
         binding.buttonCard.text = cardNames[cardIndex]
     }
+
+    fun disableButtons(){
+        binding.buttonEasy.isEnabled = false
+        binding.buttonEasy.isClickable = false
+        binding.buttonMedium.isEnabled = false
+        binding.buttonMedium.isClickable = false
+        binding.buttonHard.isEnabled = false
+        binding.buttonHard.isClickable = false
+    }
+
+    fun enableButtons(){
+        binding.buttonEasy.isEnabled = true
+        binding.buttonEasy.isClickable = true
+        binding.buttonMedium.isEnabled = true
+        binding.buttonMedium.isClickable = true
+        binding.buttonHard.isEnabled = true
+        binding.buttonHard.isClickable = true
+    }
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -128,6 +153,7 @@ class SecondFragment : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("GlobalSettings", 0)
         level = sharedPref.getInt("setting_level", 1)
         resetCards()
+        disableButtons()
 
 
         // Register the MenuProvider
@@ -150,6 +176,7 @@ class SecondFragment : Fragment() {
 
         binding.buttonCard.setOnClickListener {
             playSound(cardSounds[cardIndex])
+            enableButtons()
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
@@ -160,22 +187,25 @@ class SecondFragment : Fragment() {
             }else {
                 cardCount--
                 if (cardCount == 0) {
-                    //                playVictory()
+//                    playVictory()
                     resetCards()
                 } else {
                     removeCard()
                 }
             }
+            disableButtons()
         }
 
         binding.buttonMedium.setOnClickListener {
             nextCard()
+            disableButtons()
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
         binding.buttonHard.setOnClickListener {
             addCard()
             nextCard()
+            disableButtons()
 //            playSound(R.raw.can)
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
