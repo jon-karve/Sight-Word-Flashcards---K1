@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MenuProvider
+import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.baub.customflashcards.databinding.FragmentSecondBinding
@@ -29,67 +30,62 @@ class SecondFragment : Fragment() {
     var cardSounds = arrayOf(R.raw.can,R.raw.the,R.raw.i,R.raw.we,R.raw.out,R.raw.down)
     var cardIndex = 0
     var cardCount = 6
+    var cardTotal = 6
     var numbers = (0..5).toList().shuffled().toTypedArray()
     var cardList = (0..5).toList().shuffled().toTypedArray()
     var level = 1
+    var score = 0
 
     fun resetCards(){
         cardIndex = 0
-        cardCount = 6
-        cardFrequencies = arrayOf(1, 1, 1, 1, 1, 1)
+        cardCount = 10
+        cardFrequencies = arrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+        score = 0
+        binding.scoreText.text = "0/" + cardTotal.toString()
+
 
         if(level == 1) {
-            cardNames = arrayOf("can", "the", "I", "we", "out", "down")
-            cardSounds = arrayOf(R.raw.can, R.raw.the, R.raw.i, R.raw.we, R.raw.out, R.raw.down)
+            cardNames = arrayOf("I", "can", "see", "the", "we", "a","like", "to", "and", "go")
+            cardSounds = arrayOf(R.raw.i, R.raw.can, R.raw.see, R.raw.the, R.raw.we, R.raw.a ,R.raw.like, R.raw.to, R.raw.and, R.raw.go)
         } else if (level == 2){
-            cardNames = arrayOf("see", "a", "am", "there", "will", "like")
-            cardSounds = arrayOf(R.raw.see, R.raw.a, R.raw.am, R.raw.there, R.raw.will, R.raw.like)
+            cardNames = arrayOf("you", "my", "do", "are", "with", "she","he", "is", "little", "was")
+            cardSounds = arrayOf(R.raw.you, R.raw.my, R.raw.do_sound, R.raw.are, R.raw.with, R.raw.she ,R.raw.he, R.raw.is_sound, R.raw.little, R.raw.was)
         } else if (level == 3){
-            cardNames = arrayOf("two", "to", "her", "and", "then", "go")
-            cardSounds = arrayOf(R.raw.two, R.raw.to, R.raw.her, R.raw.and, R.raw.then, R.raw.go)
+            cardNames = arrayOf("for", "have", "of", "they", "said", "want","here", "me", "this", "what")
+            cardSounds = arrayOf(R.raw.for_sound, R.raw.have, R.raw.of, R.raw.they, R.raw.said, R.raw.want ,R.raw.here, R.raw.me, R.raw.this_sound, R.raw.what)
         } else if (level == 4){
-            cardNames = arrayOf("could", "you", "all", "do", "day", "my")
-            cardSounds = arrayOf(R.raw.could, R.raw.you, R.raw.all, R.raw.do_sound, R.raw.day, R.raw.my)
+            cardNames = arrayOf("help", "too", "has", "play", "where", "look","good", "who", "come", "does")
+            cardSounds = arrayOf(R.raw.help, R.raw.too, R.raw.has, R.raw.play, R.raw.where, R.raw.look ,R.raw.good, R.raw.who, R.raw.come, R.raw.does)
         } else if (level == 5){
-            cardNames = arrayOf("than", "his", "are", "when", "which", "with")
-            cardSounds = arrayOf(R.raw.than, R.raw.his, R.raw.are, R.raw.when_sound, R.raw.which, R.raw.with)
+            cardNames = arrayOf("an", "all", "at", "not", "so") + arrayOf("day", "how", "no", "in", "boy")
+            cardSounds = arrayOf(R.raw.an, R.raw.all, R.raw.at, R.raw.not, R.raw.so) + arrayOf(R.raw.day, R.raw.how, R.raw.no_sound, R.raw.in_sound, R.raw.boy)
         } else if (level == 6){
-            cardNames = arrayOf("he", "many", "them", "is", "little", "some")
-            cardSounds = arrayOf(R.raw.he, R.raw.many, R.raw.them, R.raw.is_sound, R.raw.little, R.raw.some)
+            cardNames = arrayOf("us", "him", "many", "it", "out") + arrayOf("girl", "if", "her", "ask", "car")
+            cardSounds = arrayOf(R.raw.us, R.raw.him, R.raw.many, R.raw.it, R.raw.out) + arrayOf(R.raw.girl, R.raw.if_sound, R.raw.her, R.raw.ask, R.raw.car)
         } else if (level == 7){
-            cardNames = arrayOf("she", "was", "now", "way", "for", "have")
-            cardSounds = arrayOf(R.raw.she, R.raw.was, R.raw.now, R.raw.way, R.raw.for_sound, R.raw.have)
+            cardNames = arrayOf("yes", "will", "two", "on", "as") + arrayOf("by", "one", "from", "his", "had")
+            cardSounds = arrayOf(R.raw.yes, R.raw.will, R.raw.two, R.raw.on, R.raw.as_sound) + arrayOf(R.raw.by, R.raw.one, R.raw.from, R.raw.his, R.raw.had)
         } else if (level == 8){
-            cardNames = arrayOf("from", "how", "of", "they", "water", "these")
-            cardSounds = arrayOf(R.raw.from, R.raw.how, R.raw.of, R.raw.they, R.raw.water, R.raw.these)
+            cardNames = arrayOf("find", "pretty", "make", "that", "or") + arrayOf("long", "fun", "get", "off", "be")
+            cardSounds = arrayOf(R.raw.find, R.raw.pretty, R.raw.make, R.raw.that, R.raw.or) + arrayOf(R.raw.long_sound, R.raw.fun_sound, R.raw.get, R.raw.off, R.raw.be)
         } else if (level == 9){
-            cardNames = arrayOf("said", "want", "people", "work", "here", "me")
-            cardSounds = arrayOf(R.raw.said, R.raw.want, R.raw.people, R.raw.work, R.raw.here, R.raw.me)
+            cardNames = arrayOf("word", "for", "this", "but", "there") + arrayOf("their", "them", "into", "big", "were")
+            cardSounds = arrayOf(R.raw.word, R.raw.for_sound, R.raw.this_sound, R.raw.but, R.raw.there) + arrayOf(R.raw.their, R.raw.them, R.raw.into, R.raw.big, R.raw.were)
         } else if (level == 10){
-            cardNames = arrayOf("about", "may", "this", "what", "or", "each")
-            cardSounds = arrayOf(R.raw.about, R.raw.may, R.raw.this_sound, R.raw.what, R.raw.or, R.raw.each)
+            cardNames = arrayOf("use", "about", "then", "time", "way") + arrayOf("when", "which", "other", "these", "more")
+            cardSounds = arrayOf(R.raw.use, R.raw.about, R.raw.then, R.raw.time, R.raw.way) + arrayOf(R.raw.when_sound, R.raw.which, R.raw.other, R.raw.these, R.raw.more)
         } else if (level == 11){
-            cardNames = arrayOf("help", "too", "other", "into", "more", "by")
-            cardSounds = arrayOf(R.raw.help, R.raw.too, R.raw.other, R.raw.into, R.raw.more, R.raw.by)
+            cardNames = arrayOf("some", "has", "with", "could", "went") + arrayOf("old", "why", "after", "than", "now")
+            cardSounds = arrayOf(R.raw.some, R.raw.has, R.raw.with, R.raw.could, R.raw.went) + arrayOf(R.raw.old, R.raw.why, R.raw.after, R.raw.than, R.raw.now)
         } else if (level == 12){
-            cardNames = arrayOf("has", "play", "find", "over", "were", "look")
-            cardSounds = arrayOf(R.raw.has, R.raw.play, R.raw.find, R.raw.over, R.raw.were, R.raw.look)
+            cardNames = arrayOf("made", "run", "over", "am", "eat") + arrayOf("your", "may", "tell", "give", "ride")
+            cardSounds = arrayOf(R.raw.made, R.raw.run, R.raw.over, R.raw.am, R.raw.eat) + arrayOf(R.raw.your, R.raw.may, R.raw.tell, R.raw.give, R.raw.ride)
         } else if (level == 13){
-            cardNames = arrayOf("where", "know", "would", "write", "good", "who")
-            cardSounds = arrayOf(R.raw.where, R.raw.know, R.raw.would, R.raw.write, R.raw.good, R.raw.who)
-        } else if (level == 14){
-            cardNames = arrayOf("part", "only", "words", "come", "does", "first")
-            cardSounds = arrayOf(R.raw.part, R.raw.only, R.raw.words, R.raw.come, R.raw.does, R.raw.first)
-        } else if (level == 15){
-            cardNames = arrayOf("sound", "their", "as", "be", "one", "three")
-            cardSounds = arrayOf(R.raw.sound, R.raw.their, R.raw.`as`, R.raw.be, R.raw.one, R.raw.three)
-        } else if (level == 16){
-            cardNames = arrayOf("I", "can", "see", "the", "we", "a", "like", "to", "and", "go")
-            cardSounds = arrayOf(R.raw.i, R.raw.can, R.raw.see, R.raw.the, R.raw.we, R.raw.a, R.raw.like, R.raw.to, R.raw.and, R.raw.go)
-            cardCount = 10
-            cardFrequencies = arrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+            cardNames = arrayOf("call", "did", "part", "each", "saw") + arrayOf("been", "up", "would", "new", "down")
+            cardSounds = arrayOf(R.raw.call, R.raw.did, R.raw.part, R.raw.each, R.raw.saw) + arrayOf(R.raw.been, R.raw.up, R.raw.would, R.raw.new_sound, R.raw.down)
         }
 
+        cardTotal = cardCount;
         val indices = cardNames.indices.toList()
 
         // Shuffle the list of indices
@@ -111,7 +107,9 @@ class SecondFragment : Fragment() {
     }
 
     fun addCard(){
-        cardFrequencies[cardIndex]++
+//        cardFrequencies[cardIndex]++
+//        score = 0
+//        binding.scoreText.text = score.toString() + "/10"
     }
 
     fun nextCard(){
@@ -131,8 +129,8 @@ class SecondFragment : Fragment() {
     fun enableButtons(){
         binding.buttonEasy.isEnabled = true
         binding.buttonEasy.isClickable = true
-        binding.buttonMedium.isEnabled = true
-        binding.buttonMedium.isClickable = true
+//        binding.buttonMedium.isEnabled = true
+//        binding.buttonMedium.isClickable = true
         binding.buttonHard.isEnabled = true
         binding.buttonHard.isClickable = true
     }
@@ -151,9 +149,12 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val sharedPref = requireActivity().getSharedPreferences("GlobalSettings", 0)
-        level = sharedPref.getInt("setting_level", 1)
+        level = sharedPref.getInt("setting_testlevel", 1)
         resetCards()
         disableButtons()
+        binding.buttonMedium.isVisible = false
+        binding.endScoreText.isVisible = false
+        binding.scoreText.text = "0/"+cardTotal.toString()
 
 
         // Register the MenuProvider
@@ -166,7 +167,7 @@ class SecondFragment : Fragment() {
                 return when (menuItem.itemId) {
                     R.id.action_settings -> {
                         // Navigate to SettingsFragment
-                        findNavController().navigate(R.id.action_SecondFragment_to_settings)
+                        findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment6)
                         true
                     }
                     else -> false
@@ -181,6 +182,8 @@ class SecondFragment : Fragment() {
         }
 
         binding.buttonEasy.setOnClickListener {
+            score++
+            binding.scoreText.text = score.toString() + "/" + cardTotal.toString()
             if(cardFrequencies[cardIndex]>1){
                 cardFrequencies[cardIndex]--
                 nextCard()
@@ -188,13 +191,13 @@ class SecondFragment : Fragment() {
                 cardCount--
                 if (cardCount == 0) {
 //                    playVictory()
-                    resetCards()
+//                    resetCards()
+                      endGame()
                 } else {
                     removeCard()
                 }
             }
-            disableButtons()
-        }
+            disableButtons()        }
 
         binding.buttonMedium.setOnClickListener {
             nextCard()
@@ -203,14 +206,56 @@ class SecondFragment : Fragment() {
         }
 
         binding.buttonHard.setOnClickListener {
-            addCard()
-            nextCard()
+            //previously this was meant to increase frequency
+            //changed this to more of a test mode with no repeats. maybe later create this as a new mode
+//                addCard()
+//                nextCard()
+//                disableButtons()
+            if(cardFrequencies[cardIndex]>1){
+                cardFrequencies[cardIndex]--
+                nextCard()
+            }else {
+                cardCount--
+                if (cardCount == 0) {
+//                    playVictory()
+//                    resetCards()
+                      endGame()
+                } else {
+                    removeCard()
+                }
+            }
             disableButtons()
-//            playSound(R.raw.can)
-            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        }
+
+        binding.endScoreText.setOnClickListener {
+//            score = 0
+//            binding.scoreText.text = score.toString() + "/10"
+            binding.endScoreText.isVisible = false
+            resetCards()
         }
 
 
+    }
+
+    private fun endGame(){
+        binding.endScoreText.isVisible = true
+        binding.endScoreText.text = "Your Score:\n\n" + score.toString() + "/" + cardTotal.toString()
+    }
+
+    private fun easyClicked() {
+        if(cardFrequencies[cardIndex]>1){
+            cardFrequencies[cardIndex]--
+            nextCard()
+        }else {
+            cardCount--
+            if (cardCount == 0) {
+//                    playVictory()
+                resetCards()
+            } else {
+                removeCard()
+            }
+        }
+        disableButtons()
     }
 
     override fun onDestroyView() {

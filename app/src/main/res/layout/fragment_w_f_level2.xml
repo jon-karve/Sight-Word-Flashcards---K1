@@ -10,12 +10,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="138dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="68dp"
+            android:text="Score"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/textScore"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind10" />
+
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="160dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="96sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind10" />
+
         <Button
             android:id="@+id/buttonFind1"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="25dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,89 +46,76 @@
 
         <Button
             android:id="@+id/buttonFind2"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind3"
-            app:layout_constraintHorizontal_bias="0.527"
-            app:layout_constraintStart_toEndOf="@+id/buttonFind1"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/buttonFind3"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="80dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/buttonFind4"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:id="@+id/buttonFind3"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFind1" />
 
         <Button
-            android:id="@+id/buttonFind5"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind6"
-            app:layout_constraintHorizontal_bias="0.522"
-            app:layout_constraintStart_toEndOf="@+id/buttonFind4"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind2" />
-
-        <Button
             android:id="@+id/buttonFind6"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="80dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind4" />
+
+        <Button
+            android:id="@+id/buttonFind4"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="80dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind2" />
+
+        <Button
+            android:id="@+id/buttonFind5"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFind3" />
 
         <Button
             android:id="@+id/buttonFind7"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind4" />
-
-        <Button
-            android:id="@+id/buttonFind8"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="60dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind9"
             app:layout_constraintTop_toBottomOf="@+id/buttonFind5" />
 
         <Button
-            android:id="@+id/buttonFind9"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
+            android:id="@+id/buttonFind8"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="80dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,114 +123,37 @@
 
         <Button
             android:id="@+id/buttonFind10"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="80dp"
+            android:text="Button"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind8" />
+
+        <Button
+            android:id="@+id/buttonFind9"
+            android:layout_width="283dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
             android:text="Button"
             android:textSize="48sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFind7" />
 
         <Button
-            android:id="@+id/buttonFind11"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind12"
-            app:layout_constraintStart_toEndOf="@+id/buttonFind10"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind8" />
-
-        <Button
-            android:id="@+id/buttonFind12"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind9" />
-
-        <Button
-            android:id="@+id/buttonFind13"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind10" />
-
-        <Button
-            android:id="@+id/buttonFind14"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind15"
-            app:layout_constraintStart_toEndOf="@+id/buttonFind13"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind11" />
-
-        <Button
-            android:id="@+id/buttonFind15"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind12" />
-
-        <Button
-            android:id="@+id/buttonFind16"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind13" />
-
-        <Button
-            android:id="@+id/buttonFind17"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind15" />
-
-        <Button
-            android:id="@+id/buttonFind18"
-            android:layout_width="212dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="20dp"
-            android:text="Button"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonFind17"
-            app:layout_constraintStart_toEndOf="@+id/buttonFind16"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind14" />
-
-        <Button
             android:id="@+id/buttonHint"
             android:layout_width="205dp"
             android:layout_height="89dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="#41E000"
             android:text="@string/question"
             android:textSize="48sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFind16" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonFind9" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

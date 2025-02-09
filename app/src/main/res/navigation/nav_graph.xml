@@ -45,8 +45,8 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
         <action
-            android:id="@+id/action_SecondFragment_to_settings"
-            app:destination="@id/thirdFragment3" />
+            android:id="@+id/action_SecondFragment_to_thirdFragment6"
+            app:destination="@id/thirdFragment6" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -71,7 +71,7 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_w_f_level1" >
         <action
-            android:id="@+id/action_WF_to_settingsFragment"
+            android:id="@+id/action_thirdFragment2_to_thirdFragment3"
             app:destination="@id/thirdFragment3" />
     </fragment>
     <fragment
@@ -80,7 +80,12 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_w_f_level2">
         <action
-            android:id="@+id/action_WFL2_to_settings"
-            app:destination="@id/thirdFragment3" />
+            android:id="@+id/action_WFL2_to_settings2"
+            app:destination="@id/thirdFragment6" />
     </fragment>
+    <fragment
+        android:id="@+id/thirdFragment6"
+        android:name="com.baub.customflashcards.SettingsTestFragment"
+        tools:layout="@layout/fragment_test_settings"
+        android:label="@string/settings_test_label" />
 </navigation>

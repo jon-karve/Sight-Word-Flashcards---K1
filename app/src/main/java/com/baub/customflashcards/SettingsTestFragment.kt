@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.baub.customflashcards.databinding.FragmentSettingsBinding
+import com.baub.customflashcards.databinding.FragmentTestSettingsBinding
 import com.baub.customflashcards.databinding.FragmentWFLevel1Binding
 
-class SettingsFragment : Fragment() {
-    private var _binding: FragmentSettingsBinding? = null
+class SettingsTestFragment : Fragment() {
+    private var _binding: FragmentTestSettingsBinding? = null
     private val binding get() = _binding!!
 
 
@@ -25,23 +25,23 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        _binding = FragmentTestSettingsBinding.inflate(inflater, container, false)
         return binding.root    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val sharedPref = requireActivity().getSharedPreferences("GlobalSettings", 0)
-        level = sharedPref.getInt("setting_level", 1)
+        level = sharedPref.getInt("setting_testlevel", 1)
         val editor = sharedPref.edit()
-        editor.putInt("streakNumL1",0)
+        editor.putInt("streakNumL2",0)
         editor.apply()
         binding.levelText.text = level.toString()
         binding.buttonLevelUp.setOnClickListener {
-            if(level<26) {
+            if(level<13) {
                 level++
                 binding.levelText.text = level.toString()
 //                editor.putString("setting_level", "setting_value")
-                editor.putInt("setting_level", level)
+                editor.putInt("setting_testlevel", level)
                 editor.apply()
             }
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
@@ -52,7 +52,7 @@ class SettingsFragment : Fragment() {
                 level--
                 binding.levelText.text = level.toString()
 //                editor.putString("setting_level", "setting_value")
-                editor.putInt("setting_level", level)
+                editor.putInt("setting_testlevel", level)
                 editor.apply()
             }
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)

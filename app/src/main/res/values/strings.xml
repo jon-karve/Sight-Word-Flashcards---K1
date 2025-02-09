@@ -135,4 +135,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="question">\?</string>
+    <string name="settings_test_label">SettingTest</string>
 </resources>
