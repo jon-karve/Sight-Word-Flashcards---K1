@@ -39,7 +39,7 @@ class WFLevel1Fragment : Fragment() {
         playSound(cardSounds[cardList[0]])
     }
     override fun onCreateView(
-        inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View {
         _binding = FragmentWFLevel1Binding.inflate(inflater, container, false)
         return binding.root
     }
@@ -48,7 +48,7 @@ class WFLevel1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val sharedPref = requireActivity().getSharedPreferences("GlobalSettings", 0)
         streak = sharedPref.getInt("streakNumL1", 0)
-        binding.textScore.setText(streak.toString())
+        binding.textScore.text = streak.toString()
 //        val editor = sharedPref.edit()
         level = sharedPref.getInt("setting_level", 1)
         // Register the MenuProvider
@@ -215,7 +215,7 @@ class WFLevel1Fragment : Fragment() {
         val editor = sharedPref.edit()
         editor.putInt("streakNumL1", streak)
         editor.apply()
-        binding.textScore.setText(streak.toString())
+        binding.textScore.text = streak.toString()
     }
 
     private fun endStreak() {
@@ -224,7 +224,7 @@ class WFLevel1Fragment : Fragment() {
         val editor = sharedPref.edit()
         editor.putInt("streakNumL1", streak)
         editor.apply()
-        binding.textScore.setText(streak.toString())
+        binding.textScore.text = streak.toString()
     }
 
     fun setIsClickable(canClick: Boolean){
@@ -245,7 +245,7 @@ class WFLevel1Fragment : Fragment() {
 
     @SuppressLint("DiscouragedApi")
     fun playSound(resid: Int){
-        val resId = getResources().getIdentifier(resid.toString(),
+        val resId = resources.getIdentifier(resid.toString(),
             "raw", activity?.packageName)
 
         val mediaPlayer = MediaPlayer.create(activity, resId)
